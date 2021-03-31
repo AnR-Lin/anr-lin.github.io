@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>AnR-Lin || Github Profile Page</title>
+
+    <meta name="description" content="AnR-Lin || Github Profile Page">
+    <meta name="keywords" content="anr-lin, github, profile">
+    <meta name="author" content="nK(Front End) & AnR-Lin(Back End)">
+
+    <link rel="icon" type="image/png" href="assets/images/dark/icon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Flickity -->
+    <link rel="stylesheet" href="assets/vendor/flickity/dist/flickity.min.css" />
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/dist/magnific-popup.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="assets/vendor/slider-revolution/css/settings.css">
+    <link rel="stylesheet" href="assets/vendor/slider-revolution/css/layers.css">
+    <link rel="stylesheet" href="assets/vendor/slider-revolution/css/navigation.css">
+
+    <!-- Bootstrap Sweetalert -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-sweetalert/dist/sweetalert.css" />
+
+    <!-- Social Likes -->
+    <link rel="stylesheet" href="assets/vendor/social-likes/dist/social-likes_flat.css" />
+
+    <!-- FontAwesome -->
+    <script defer src="assets/vendor/font-awesome/svg-with-js/js/fontawesome-all.min.js"></script>
+    <script defer src="assets/vendor/font-awesome/svg-with-js/js/fa-v4-shims.min.js"></script>
+
+    <!-- Youplay -->
+    <link rel="stylesheet" href="assets/css/youplay-light.css">
+
+    <!-- RTL (uncomment this to enable RTL support) -->
+    <!-- <link rel="stylesheet" href="assets/css/youplay-rtl.min.css" /> -->
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    
+    
+</head>
+
+
+<body>
+    <div class="content-wrap">
+<section class="youplay-banner banner-top youplay-banner-parallax small">
+    
+        <div class="image" data-speed="0.4">
+            <img src="assets/images/sampul.jpg" alt="" class="jarallax-img">
+        </div>
+
+    <div class="info" id="info">
+        <div>
+            <div class="container youplay-user">
+                <a v-bind:href="info.profile_photo" class="angled-img image-popup">
+                    <div class="img">
+                        <img v-bind:src="info.profile_photo" alt="">
+                    </div>
+                    <i class="fa fa-search-plus icon"></i>
+                </a>
+                <div class="user-data">
+                    <h2>{{info.profile_name}}</h2>
+                    <div class="location"><i class="fa fa-map-marker"></i> Indonesia</div>
+                    <div class="activity">
+                        <div>
+                            <div class="num">{{info.profile_repo}}</div>
+                            <div class="title">Repo</div>
+                        </div>
+                        <div>
+                            <div class="num">{{info.profile_subscriber}}</div>
+                            <div class="title">Subscribe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-20">
+                <button class="btn btn-sm btn-default ml-0">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Banner -->
+
+        
+
+        
+    <div class="container youplay-content">
+
+        <div class="row" id="activity">
+
+            <div class="col-md-9">
+
+                <!-- Activity -->
+                <h2 class="mt-0">Activity</h2>
+                <div class="youplay-timeline" v-for="data in datas" :key="data.created_at">
+
+                    <!-- Github New Repo -->
+                    <div v-if="data.type === 'new'">
+                        <div class="youplay-timeline-block">
+                            <!-- icon -->
+                            <div class="youplay-timeline-icon bg-warning">
+                                <i class="fa fa-github"></i>
+                            </div>
+                            <!-- /icon -->
+
+                            <!-- content -->
+                            <div class="youplay-timeline-content" style="padding-bottom: 20px;">
+                                <h3 class="mb-0">New Repo</h3>
+                                <p>{{data.description}}</p>
+                                <a v-bind:href="data.link" class="btn">Link</a>
+                            </div>
+                            <!-- content -->
+                        </div>
+                    </div>
+                    <!-- /Github New Repo -->
+                    <!-- Github Commit Repo -->
+                    <div v-else-if="data.type === 'commit'">
+                        <div class="youplay-timeline-block">
+                            <!-- icon -->
+                            <div class="youplay-timeline-icon bg-success">
+                                <i class="fa fa-github"></i>
+                            </div>
+                            <!-- /icon -->
+
+                            <!-- content -->
+                            <div class="youplay-timeline-content">
+                                <h3 class="mb-0">Commit Repo</h3>
+                                <p>Do you really want to know me? if true, I am <a>Choirul (AnR-Lin) Umam</a>, I come from Indonesia. Maybe I know it's still a low level programming, but it's not a problem that discourages me.</p>
+                            </div>
+                            <!-- content -->
+                        </div>
+                    </div>
+                    <!-- /Github Commit Repo -->
+
+                </div>
+                <!-- /Activity -->
+
+
+                <!-- Skills -->
+                <h2>Skills</h2>
+                JS:
+                <div class="progress youplay-progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                        <span class="sr-only">70% Complete (success)</span>
+                    </div>
+                </div>
+                
+                PHP:
+                <div class="progress youplay-progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        <span class="sr-only">80% Complete (warning)</span>
+                    </div>
+                </div>
+
+                ANDROID:
+                <div class="progress youplay-progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        <span class="sr-only">40% Complete</span>
+                    </div>
+                </div>
+
+                ILLUSTRATOR:
+                <div class="progress youplay-progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="sr-only">50% Complete (danger)</span>
+                    </div>
+                </div>
+                <!-- /Skills -->
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-md-3">
+                <div class="side-block">
+                    <h4 class="block-title">About</h4>
+                    <div class="block-content">
+                        Do you really want to know me? if true, I am <a href="https://github.com/AnR-Lin">Choirul (AnR-Lin) Umam</a>, I from Indonesia. Maybe I'm still a low level programmer, but it's not a problem that discourages me.
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side -->
+        </div>
+
+    </div>
+
+
+        
+            <!-- Footer -->
+<footer class="youplay-footer youplay-footer-parallax">
+    
+    
+
+    <div class="wrapper">
+
+        
+
+        
+            <!-- Social Buttons -->
+            <div class="social">
+                <div class="container">
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <a href="https://web.facebook.com/heat.hcx/">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="https://www.instagram.com/anr_lin/">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="https://t.me/akin0o">
+                                <i class="fab fa-telegram"></i>
+                                <span>Telegram</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="https://twitter.com/anr_lin">
+                                <i class="fab fa-twitter-square"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Social Buttons -->
+        
+
+        
+            <!-- Copyright -->
+            <div class="copyright">
+                <div class="container">
+                    <p>2021 &copy; <strong>AnR-Lin & nK</strong>. All rights reserved</p>
+                </div>
+            </div>
+            <!-- /Copyright -->
+        
+    </div>
+</footer>
+<!-- /Footer -->
+
+        
+    </div>
+
+    
+
+    
+<!-- START: Scripts -->
+
+<!-- Object Fit Polyfill -->
+<script src="assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+
+<!-- jQuery -->
+<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+
+<!-- Hexagon Progress -->
+<script src="assets/vendor/HexagonProgress/jquery.hexagonprogress.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Jarallax -->
+<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+
+<!-- Flickity -->
+<script src="assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+
+<!-- jQuery Countdown -->
+<script src="assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+
+<!-- Moment.js -->
+<script src="assets/vendor/moment/min/moment.min.js"></script>
+<script src="assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+
+<!-- Magnific Popup -->
+<script src="assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+
+<!-- Revolution Slider -->
+<script src="assets/vendor/slider-revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="assets/vendor/slider-revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- ImagesLoaded -->
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+<!-- Isotope -->
+<script src="assets/vendor/isotope-layout/dist/isotope.pkgd.min.js"></script>
+
+<!-- Bootstrap Validator -->
+<script src="assets/vendor/bootstrap-validator/dist/validator.min.js"></script>
+
+<!-- Bootstrap Sweetalert -->
+<script src="assets/vendor/bootstrap-sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- Social Likes -->
+<script src="assets/vendor/social-likes/dist/social-likes.min.js"></script>
+
+<!-- Youplay -->
+<script src="assets/js/youplay.min.js"></script>
+<script src="assets/js/youplay-init.js"></script>
+
+<!-- BackEnd -->
+
+
+<!-- END: Scripts -->
+<script src="assets/js/backend/vue.js"></script>
+<script src="assets/js/backend/axios.min.js"></script>
+<script src="assets/js/backend/anrlin.js"></script>
+
+    
+</body>
+</html>
